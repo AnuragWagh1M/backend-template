@@ -1,6 +1,6 @@
 import dotenv from "dotenv"; //as we want to configure our env variables as soon as the server starts
 import dbConnect from "./db/dbconnect.js";
-import { app } from "./app.js";
+import app from "./app.js";
 
 dotenv.config({
   path: "./env",
@@ -9,7 +9,7 @@ dotenv.config({
 dbConnect()
   .then(() => {
     app.listen(process.env.PORT || 8000, () => {
-      `Server is running on port: ${process.env.PORT}`;
+      console.log(`Server is running on port: ${process.env.PORT}`);
     });
   })
   .catch((error) => {
