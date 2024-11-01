@@ -20,6 +20,6 @@ app.use(cookieParser());
 import router from "./routes/user.routes.js";
 
 //routes declaration
-app.use("/users", router);
+app.use("/api/v1/users", router);
 
 export default app;
